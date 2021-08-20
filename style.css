@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+
+
+/* Play zone */
+
+
+#playzone{
+    /* visibility:hidden; */
+    display:none;
+}
+.container {
+    width: 100%;
+    display: flex;
+}
+
+#human {
+    width: 40%;
+    height: 300px;
+}
+
+#comp {
+    width: 40%;
+    height: 300px;
+}
+
+.players {
+    margin: 30px 30px;
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+}
+
+#score {
+    text-align: center;
+    width: 30ch;
+    padding: 10px;
+    height: auto;
+    margin: auto;
+    color:white;
+    background: black;
+    border-radius: 10px;
+}
+
+.choice {
+    font-size: 80px;
+}
+
+#buttons {
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin: 20px;
+    justify-content: space-around;
+}
+
+.choice-buttons {
+    height: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    box-shadow:2px 2px 1px 1px rgba(0,0,0,0.7);
+}
+
+.choice-buttons:hover{
+    color:white;
+    background: linear-gradient(120deg,black ,rgba(0,0,0,0.5),transparent);
+    box-shadow:inset 1px 1px 2px 2px rgba(0,0,0,0.6);
+    /* transition:0.6s ease; */
+    /* box-shadow: inset 1px 1px 1px 1px black; */
+    transform: scale(1.1);
+}
+img{
+    width:100px;
+    aspect-ratio:1/1;
+    background-size: contain;
+}
+
+#target{
+    width:40%;
+    margin:auto;
+    height:auto;
+    background-color: black;
+    color:white;
+    text-align: center;
+    border-radius: 10px;
+    /* transition:all 2s ease; */
+    visibility: hidden;
+}
+#backbtn{
+    position: absolute;
+    top:2%;
+    left:2%;
+    width:2.2rem;
+    height:2.2rem;
+    background-image: url("back.png");
+    background-size: cover;
+    /* background: red; */
+    border-radius:10px;
+}
+#backbtn:hover{
+    filter:hue-rotate(20deg);
+}
+
+
+/* Menu zone */
+
+#menuzone{
+    background:rgb(250, 239, 195);
+    width:40%;
+    margin:20% auto;
+    height:300px;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+}
+.menu{
+    padding:10px;
+    margin:10px;
+    border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border:none;
+    background: cornsilk;
+    box-shadow:3px 3px 2px 3px rgb(85, 85, 18),-2px -2px 3px 2px rgb(236, 236, 218) ;
+    
+}
+
+.menu:hover{
+    /* border:1px solid black; */
+    /* background-color: black; */
+    background: linear-gradient(45deg,rgb(241, 209, 78),transparent);
+    box-shadow:inset 2px 2px 2px 3px rgba(85,85,18,0.8),inset -2px -2px 1px 1px rgb(236, 236, 218);
+    /* transition:3s ease; */
+}
+
+#play{
+    width:60%;
+    margin-top: 20px;
+    /* padding:10%; */
+    /* background: cornsilk; */
+}
+#ins{
+    width:60%;
+    /* padding-bottom: 10px; */
+    /* background: cornsilk; */
+
+}
+#about{
+    width:60%;
+    /* padding-bottom: 10px; */
+    /* background: cornsilk; */
+
+}
+#exit{
+    width:60%;
+    /* padding-bottom: 10px; */
+    /* background: cornsilk; */
+    margin-bottom: 20px;;
+}
+
+#help{
+    text-decoration: none;
+    color:black;
+}
+#help:hover{
+    color:black;
+}
+
+/* Result zone */
+
+#resultzone{
+    display:none;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    height:100vh;
+    background: transparent;
+}
+#resultbox{
+    display:grid;
+    /* align-items: center; */
+    width:25em;
+    /* aspect-ratio:1/1; */
+    height:25em;
+    grid-template-rows: repeat(4,1fr);
+    grid-template-columns: repeat(5,1fr);
+    grid-template-areas: 
+    "A A A A A"
+    "B B F C C"
+    "G G I H H"
+    "D D I E E";
+    background:linear-gradient(130deg,rgb(203, 250, 32),rgb(10, 133, 113));
+    border-radius:20px;
+    font-family: 'Patua One', cursive;
+    /* -webkit-box-reflect: below 1px linear-gradient(transparent,#0005); */
+    box-shadow:5px 5px 2px 3px rgb(1, 1, 70) , inset 2px 2px 2px 2px lightblue;
+}
+#summary{
+    padding:0.5em;
+    background:linear-gradient(150deg,rgb(221, 240, 168),orange);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5em;
+    text-shadow:0px 2px 1px black;  
+    grid-area: A;
+    place-self: center;
+}
+
+#myscore{
+    grid-area: B;
+    place-self: center;
+    color:lightcyan;
+    text-shadow: 2px 3px 1px black;
+    font-family: cursive;
+    /* justify-content: center; */
+}
+#compscore{
+    grid-area: C;
+    place-self: center;
+    color:lightcyan;
+    text-shadow: 2px 3px 1px black;
+    font-family: cursive;
+}
+#homebtn{
+    grid-area: D;
+    /* place-self: center / end; */
+    align-self: end;
+    justify-self: center;
+    /* background-image:linear-gradient(yellow,orange); */
+    /* background-color:yellow; */
+    background-image:linear-gradient(yellow,orange);
+    color:black;
+    /* box-shadow:1px 1px 5px 1px rgb(62, 66, 22) , 2px 2px 10px 2px rgb(64, 68, 26)  ; */
+    box-shadow: 1px 3px 3px 0 black;
+
+}
+#playbtn{
+    grid-area: E;
+    /* place-self: center; */
+    align-self: end;
+    justify-self: center;
+    box-shadow: 1px 3px 3px 0 black;
+    background-image: linear-gradient(rgb(6, 252, 6),rgb(4, 124, 4));
+}
+#empty{
+    grid-area: F;
+    place-self: center;
+}
+#sumname1{
+    grid-area: G;
+    place-self: center;
+    background: linear-gradient(blue,rgb(3, 15, 19));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    box-shadow:0px 4px 10px 0px black; 
+    padding:0 5px;
+    /* background:yellowgreen; */
+    /* text-shadow:0px 2px 1px rgb(47, 192, 228); */
+    /* font-family: cursive; */
+}
+#sumname2{
+    grid-area:H;
+    place-self:center;
+    background: linear-gradient(blue,rgb(10, 10, 27));
+    box-shadow:0px 4px 10px 0px black; 
+    padding:0 5px;
+    /* background:yellowgreen; */
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.sumscores{
+    font-size: 5em;
+}
+.result-btns{
+    /* background-color: red; */
+    color:black;
+    appearance: none;
+    /* display:block; */
+    width:6em;
+    height:5vh;
+    border-radius:5px;
+    margin:2vh;
+}
+.result-btns:hover{
+    color:black;
+    background: white;
+}
+#homebtn:hover{
+    color:black;
+    
+}
